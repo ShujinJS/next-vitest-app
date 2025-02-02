@@ -1,0 +1,84 @@
+@use "src/lib/styles/_mixins" as *;
+@use "src/lib/styles/_colors" as *;
+@use "src/lib/styles/_shadows" as *;
+
+.feed-card {
+  min-width: 100%;
+  min-height: 200px;
+  margin: 2em 0;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: $shadow-feed-card;
+
+  @include flex(flex, column, flex-start, flex-start);
+  @include feed-card-bg;
+
+  &__identity {
+    gap: 1em;
+
+    @include flex(flex, row, flex-start, center);
+  }
+
+  &__content {
+    &__images {
+      margin-top: 1em;
+      gap: 1em;
+
+      @include flex(flex, column, flex-start, flex-start);
+
+      img {
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+    }
+
+    &__thumbnails {
+      gap: 1em;
+
+      img {
+        border-radius: 5px;
+
+        &.active {
+          border: 2px solid cyan;
+        }
+      }
+
+      @include flex(flex, row, flex-start, flex-start);
+    }
+  }
+
+  &__interactions {
+    gap: 1em;
+
+    @include flex(flex, row, flex-start, center);
+  }
+
+  &__comments {
+    gap: 1em;
+    width: 100%;
+    max-height: 250px;
+    padding: 5px;
+    box-shadow: $shadow-feed-card;
+    overflow: scroll;
+
+    @include flex(flex, column, flex-start, flex-start);
+
+    &__comment {
+      width: 100%;
+      padding: 10px;
+      color: aliceblue;
+
+      &-user {
+        gap: 0.5em;
+        margin-bottom: 1em;
+        @include flex(flex, row, flex-start, flex-start);
+      }
+
+      p {
+        padding: 10px;
+        background-color: aliceblue;
+        border-radius: 5px;
+      }
+    }
+  }
+}

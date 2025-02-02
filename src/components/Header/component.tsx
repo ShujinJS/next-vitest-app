@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import nextjsLogo from "@lib/assets/nextjs_logo.svg";
 
-import "./Header.scss";
+import "./style.scss";
 
 export default function Header() {
   return (

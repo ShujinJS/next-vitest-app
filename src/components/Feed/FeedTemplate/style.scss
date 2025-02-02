@@ -1,0 +1,10 @@
+@use "@lib/styles/_colors" as *;
+@use "@lib/styles/_shadows" as *;
+@use "@lib/styles/_mixins" as *;
+
+.feed-template {
+  width: 300px;
+  min-height: 350px;
+
+  @include flex(flex, column, space-between, flex-start);
+}

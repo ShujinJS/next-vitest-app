@@ -1,5 +1,6 @@
-@mixin flex($display, $justify, $align) {
+@mixin flex($display: flex, $direction, $justify, $align) {
   display: $display;
+  flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
 }
@@ -13,4 +14,14 @@
 @mixin col-center {
   flex-direction: column;
   @include flex-center;
+}
+
+@mixin feed-card-bg {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    144deg,
+    rgba(255, 255, 255, 0.39399509803921573) 0%,
+    rgba(255, 255, 255, 0.46122198879551823) 36%,
+    rgba(0, 212, 255, 0.3435749299719888) 100%
+  );
 }

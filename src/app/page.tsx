@@ -1,4 +1,4 @@
-import Button from "@components/Button/Button";
+import Button from "@/components/Button/component";
 import { redirect } from "next/navigation";
 
 export default function Home() {

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import nextjsIcon from "@lib/assets/nextjs_icon.svg";
 
-import "./Footer.scss";
+import "./style.scss";
 
 export default function Footer() {
   return (
