@@ -136,7 +136,7 @@ export default function FeedCard(props: FeedCardProps) {
                         alt="commentator avatar"
                       />
                     ) : (
-                      <Skeleton width={25} height={25} />
+                      <Skeleton width={25} height={25} circle />
                     )}
 
                     {!comment.user ? (
