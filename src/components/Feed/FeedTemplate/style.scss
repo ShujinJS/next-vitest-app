@@ -1,0 +1,25 @@
+@use "@lib/styles/_colors" as *;
+@use "@lib/styles/_shadows" as *;
+@use "@lib/styles/_mixins" as *;
+@use "@lib/styles/_screens" as *;
+
+.feed-template {
+  width: 300px;
+  min-height: 350px;
+  margin-top: 2em;
+
+  @include flex(flex, column, space-between, flex-end);
+
+  @media screen and (min-width: $screen-sm) {
+    width: 500px;
+  }
+
+  button {
+    padding: 5px 8px;
+    border-radius: 5px;
+    background: $color-primary-dark-bg;
+    box-shadow: $shadow-feed-card;
+
+    @include feed-card-bg;
+  }
+}
