@@ -8,42 +8,42 @@ export default function FeedCardSkeleton() {
   return (
     <div className={classNamePrefix}>
       <div className={clsx(classNamePrefix + "__identity")}>
-        <Skeleton
-          circle
-          width={35}
-          height={35}
-          containerClassName="avatar-skeleton"
-        />
-        <Skeleton width={70} duration={3} />
+        <Skeleton circle containerClassName="avatar-skeleton" />
+        <Skeleton duration={3} />
       </div>
 
       <div className={clsx(classNamePrefix + "__content")}>
-        <Skeleton width={250} height={10} count={1.5} />
+        <Skeleton count={1.5} />
 
         <div className={clsx(classNamePrefix + "__content" + "__images")}>
-          <Skeleton width={250} height={100} />
+          <Skeleton />
 
           <div className={clsx(classNamePrefix + "__content" + "__thumbnails")}>
-            <Skeleton width={50} height={50} />
+            <Skeleton />
           </div>
 
           <div className={clsx(classNamePrefix + "__interactions")}>
-            <Skeleton width={5} height={5} />
-            <Skeleton width={5} height={5} />
+            <Skeleton />
+            <Skeleton />
           </div>
           <div className={clsx(classNamePrefix + "__comments")}>
             <div className={clsx(classNamePrefix + "__comments" + "__comment")}>
               <div
                 className={clsx(
-                  classNamePrefix + "__comments" + "__comment" + "-user"
+                  classNamePrefix + "__comments__comment" + "-user"
                 )}
               >
-                <Skeleton width={25} height={25} circle />
-                <Skeleton width={50} height={25} />
+                <Skeleton circle />
+                <Skeleton />
               </div>
-              <Skeleton width={250} height={40} />
+              <div
+                className={clsx(
+                  classNamePrefix + "__comments__comment-user" + "__txt"
+                )}
+              >
+                <Skeleton />
+              </div>
             </div>
-            <Skeleton width={250} height={35} />
           </div>
         </div>
       </div>

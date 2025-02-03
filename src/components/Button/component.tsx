@@ -1,16 +1,14 @@
 "use client";
 
 type ButtonProps = {
-  params: {
-    text: string;
-    fn: () => void;
-  };
+  text: string;
+  onClick: (param?: boolean) => void;
 };
 
 const Button = (props: ButtonProps) => {
-  const { text, fn } = props.params;
+  const { text, onClick } = props;
 
-  return <button onClick={fn}>{text}</button>;
+  return <button onClick={() => onClick}>{text}</button>;
 };
 
 export default Button;

@@ -1,9 +1,10 @@
 @use "src/lib/styles/_mixins" as *;
 @use "src/lib/styles/_colors" as *;
 @use "src/lib/styles/_shadows" as *;
+@use "@lib/styles/_screens" as *;
 
 .feed-card {
-  min-width: 100%;
+  width: 100%;
   min-height: 200px;
   margin: 2em 0;
   padding: 1em;
@@ -14,21 +15,75 @@
   @include feed-card-bg;
 
   &__identity {
+    width: 100%;
     gap: 1em;
 
     @include flex(flex, row, flex-start, center);
+
+    .avatar-skeleton {
+      .react-loading-skeleton {
+        width: 35px;
+        height: 35px;
+
+        @media screen and (min-width: $screen-sm) {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+
+    .react-loading-skeleton {
+      width: 200px;
+      height: 35px;
+
+      @media screen and (min-width: $screen-sm) {
+        width: 400px;
+        height: 50px;
+      }
+    }
   }
 
   &__content {
+    width: 100%;
+
+    .react-loading-skeleton {
+      width: 200px;
+      height: 5px;
+
+      @media screen and (min-width: $screen-sm) {
+        width: 450px;
+        height: 10px;
+      }
+    }
+
     &__images {
+      width: 100%;
       margin-top: 1em;
       gap: 1em;
 
       @include flex(flex, column, flex-start, flex-start);
 
       img {
+        width: 100%;
+        height: 150px;
+        object-fit: none;
         border-radius: 5px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+        @media screen and (min-width: $screen-sm) {
+          width: 450px;
+          height: 250px;
+        }
+      }
+
+      .react-loading-skeleton {
+        width: 250px;
+        height: 150px;
+
+        @media screen and (min-width: $screen-sm) {
+          width: 450px;
+          height: 150px;
+        }
       }
     }
 
@@ -36,6 +91,8 @@
       gap: 1em;
 
       img {
+        width: 50px;
+        height: 50px;
         border-radius: 5px;
 
         &.active {
@@ -44,6 +101,16 @@
       }
 
       @include flex(flex, row, flex-start, flex-start);
+
+      .react-loading-skeleton {
+        width: 50px;
+        height: 50px;
+
+        @media screen and (min-width: $screen-sm) {
+          width: 50px;
+          height: 50px;
+        }
+      }
     }
   }
 
@@ -51,13 +118,21 @@
     gap: 1em;
 
     @include flex(flex, row, flex-start, center);
+
+    .react-loading-skeleton {
+      width: 5px;
+      height: 5px;
+
+      @media screen and (min-width: $screen-sm) {
+        width: 10px;
+        height: 10px;
+      }
+    }
   }
 
   &__comments {
-    gap: 1em;
     width: 100%;
     max-height: 250px;
-    padding: 5px;
     border-radius: 5px;
     box-shadow: $shadow-feed-card;
     overflow: scroll;
@@ -65,14 +140,42 @@
     @include flex(flex, column, flex-start, flex-start);
 
     &__comment {
-      width: 100%;
+      width: inherit;
       padding: 10px;
       color: aliceblue;
 
       &-user {
+        width: inherit;
         gap: 0.5em;
         margin-bottom: 1em;
         @include flex(flex, row, flex-start, flex-start);
+
+        img {
+          width: 25px;
+          height: 25px;
+        }
+
+        .react-loading-skeleton {
+          width: 25px;
+          height: 25px;
+
+          @media screen and (min-width: $screen-sm) {
+            width: 25px;
+            height: 25px;
+          }
+        }
+
+        &__txt {
+          .react-loading-skeleton {
+            width: 250px;
+            height: 40px;
+
+            @media screen and (min-width: $screen-sm) {
+              width: 450px;
+              height: 40px;
+            }
+          }
+        }
       }
 
       p {
