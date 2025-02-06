@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/Header/component";
 import Footer from "@/components/Footer/component";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +34,11 @@ export default function RootLayout({
           className={`${geistSans.variable} ${geistMono.variable} antialiased w-full min-h-screen flex flex-col justify-between items-center`}
         >
           <Header />
-          <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+          <main className="flex flex-col gap-8 row-start-2 items-center justify-center sm:items-start">
+            <div className="flex justify-center gap-4 mx-auto mt-10 w-full">
+              <Link href={"/feed"}>Feed</Link>
+              <Link href={"/auth"}>Authentication</Link>
+            </div>
             {children}
           </main>
           <Footer />
