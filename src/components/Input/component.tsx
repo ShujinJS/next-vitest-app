@@ -8,7 +8,7 @@ export default function Input(props: IInputProps) {
   const { id, label, placeholder } = props;
 
   return (
-    <div className="relative flex flex-1 flex-col flex-shrink-0 w-full">
+    <div className="relative flex flex-1 flex-col shrink-0 w-full">
       <label htmlFor="input" className="fs-14 font-medium text-gray-700">
         {label}
       </label>

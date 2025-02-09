@@ -36,5 +36,4 @@ export default {
     },
   },
   plugins: [],
-  purge: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
 } satisfies Config;
