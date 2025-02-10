@@ -4,6 +4,7 @@ import Header from "@/components/Header/component";
 import Footer from "@/components/Footer/component";
 import Link from "next/link";
 import "./globals.css";
+import "./layout.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,11 +32,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div
-          className={`${geistSans.variable} ${geistMono.variable} antialiased w-full min-h-screen flex flex-col justify-between items-center`}
+          className={`layout-wrapper ${geistSans.variable} ${geistMono.variable} `}
         >
           <Header />
-          <main className="flex flex-col gap-8 row-start-2 items-center justify-center sm:items-start">
-            <div className="flex justify-center gap-4 mx-auto mt-10 w-full">
+          <main className="">
+            <div className="layout-link ">
               <Link href={"/feed"}>Feed</Link>
               <Link href={"/auth"}>Authentication</Link>
             </div>

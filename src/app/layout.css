@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+.layout-wrapper {
+  @apply antialiased w-full min-h-screen flex flex-col justify-between items-center;
+
+  main {
+    @apply flex flex-col gap-8 row-start-2 items-center justify-center sm:items-start;
+  }
+}
+
+.layout-link {
+  @apply flex justify-center gap-4 mx-auto mt-10 w-full;
+
+  a {
+    @apply hover:text-blue-500 transition delay-150 duration-300 ease-in-out;
+  }
+}

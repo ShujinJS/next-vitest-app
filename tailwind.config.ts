@@ -14,7 +14,7 @@ export default {
       xl: "1440px",
     },
     colors: {
-      blue: "#1fb6ff",
+      primaryblue: "#fff",
       purple: "#7e5bef",
       pink: "#ff49db",
       orange: "#ff7849",
