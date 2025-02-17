@@ -26,6 +26,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const links = [
+    { href: "/", label: "Home" },
+    { href: "/feed", label: "Feed" },
+    { href: "/auth", label: "Authentication" },
+    { href: "/places", label: "Places" },
+  ];
+
   return (
     <html lang="en">
       <body
@@ -37,8 +44,11 @@ export default function RootLayout({
           <Header />
           <main className="">
             <div className="layout-link ">
-              <Link href={"/feed"}>Feed</Link>
-              <Link href={"/auth"}>Authentication</Link>
+              {links.map((link, index) => (
+                <Link key={index} href={link.href}>
+                  {link.label}
+                </Link>
+              ))}
             </div>
             {children}
           </main>

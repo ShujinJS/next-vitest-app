@@ -1,0 +1,50 @@
+@use "@lib/styles/_screens" as *;
+@use "@lib/styles/_shadows" as *;
+@use "@lib/styles/_colors" as *;
+@use "@lib/styles/_mixins" as *;
+@import "tailwindcss";
+
+.place-card {
+  min-width: 250px;
+  min-height: 200px;
+  max-width: fit-content;
+  padding: 1em;
+  box-shadow: $shadow-feed-card;
+
+  @include flex(flex, column, flex-start, space-between);
+  @apply rounded-md;
+
+  img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .name-skeleton {
+    .react-loading-skeleton {
+      width: 100%;
+      height: 30px;
+    }
+  }
+
+  .img-skeleton {
+    .react-loading-skeleton {
+      width: 100%;
+      height: 220px;
+    }
+  }
+
+  .desc-skeleton {
+    .react-loading-skeleton {
+      width: 100%;
+      height: 40px;
+    }
+  }
+
+  .rating-skeleton {
+    .react-loading-skeleton {
+      width: 100px;
+      height: 20px;
+    }
+  }
+}

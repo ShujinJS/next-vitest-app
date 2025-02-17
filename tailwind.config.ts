@@ -33,6 +33,19 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      keyframes: {
+        spin: {
+          "0%, 100%": {
+            transform: "rotate(360deg)",
+          },
+          "50%": {
+            transform: "rotate(180deg)",
+          },
+        },
+      },
+      animation: {
+        spin: "spin 1s linear infinite",
+      },
     },
   },
   plugins: [],
