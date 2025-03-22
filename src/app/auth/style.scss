@@ -1,0 +1,10 @@
+@use "src/lib/styles/_shadows" as *;
+@use "src/lib/styles/_colors" as *;
+@use "src/lib/styles/_mixins" as *;
+
+.auth-page {
+  width: 300px;
+  min-height: 450px;
+  box-shadow: $shadow-feed-card;
+  @include feed-card-bg;
+}

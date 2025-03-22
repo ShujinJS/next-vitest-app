@@ -14,7 +14,7 @@ export default {
       xl: "1440px",
     },
     colors: {
-      blue: "#1fb6ff",
+      primaryblue: "#fff",
       purple: "#7e5bef",
       pink: "#ff49db",
       orange: "#ff7849",
@@ -32,6 +32,19 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+      },
+      keyframes: {
+        spin: {
+          "0%, 100%": {
+            transform: "rotate(360deg)",
+          },
+          "50%": {
+            transform: "rotate(180deg)",
+          },
+        },
+      },
+      animation: {
+        spin: "spin 1s linear infinite",
       },
     },
   },

@@ -135,9 +135,8 @@
     max-height: 250px;
     border-radius: 5px;
     box-shadow: $shadow-feed-card;
-    overflow: scroll;
-
-    @include flex(flex, column, flex-start, flex-start);
+    overflow-y: scroll;
+    scrollbar-width: thin;
 
     &__comment {
       width: inherit;
@@ -171,7 +170,7 @@
             height: 40px;
 
             @media screen and (min-width: $screen-sm) {
-              width: 450px;
+              width: 100%;
               height: 40px;
             }
           }

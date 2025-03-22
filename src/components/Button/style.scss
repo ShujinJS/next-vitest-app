@@ -1,0 +1,8 @@
+@use "@lib/styles/_colors" as *;
+@use "@lib/styles/_shadows" as *;
+@use "@lib/styles/_mixins" as *;
+@use "@lib/styles/_screens" as *;
+
+.custom-btn {
+  box-shadow: $shadow-feed-card;
+}
