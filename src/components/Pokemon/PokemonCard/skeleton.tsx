@@ -1,8 +1,8 @@
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-export default function PlaceCardSkeleton() {
-  const classNamePrefix = "place-card";
+export default function PokemonCardSkeleton() {
+  const classNamePrefix = "pokemon-card";
 
   return (
     <div className={classNamePrefix}>

@@ -1,5 +1,5 @@
-import PlaceTemplate from "@/components/Place/PlaceTemplate/component";
+import PokemonTemplate from "@/components/Pokemon/PokemonTemplate/component";
 
 export default function Places() {
-  return <PlaceTemplate />;
+  return <PokemonTemplate />;
 }

@@ -1,10 +1,10 @@
-import { IPlaceCard } from "@/lib/data/data.places";
+import { IPokemonCard } from "@/lib/data/data.pokemons";
 import dynamic from "next/dynamic";
-import PlaceCardSkeleton from "./skeleton";
+import PokemonCardSkeleton from "./skeleton";
 import "./style.scss";
 
-interface PlaceCardProps {
-  data: IPlaceCard;
+interface PokemonCardProps {
+  data: IPokemonCard;
   isLoaded: boolean;
   key: number;
 }
@@ -13,10 +13,10 @@ const Image = dynamic(() => import("next/image"), {
   loading: () => <p>Loading...</p>,
 });
 
-export default function PlaceCard(props: PlaceCardProps) {
-  const classNamePrefix = "place-card";
-  const { isLoaded, data, key } = props;
-  const { name, location, description, image, rating } = data;
+export default function PokemonCard(props: PokemonCardProps) {
+  const classNamePrefix = "pokemon-card";
+  const { isLoaded, key, data } = props;
+  const { id, name, order, sprites, types } = data;
 
   return (
     <>
@@ -25,17 +25,17 @@ export default function PlaceCard(props: PlaceCardProps) {
           <span className="min-h-10 md:text-lg lg:text-xl">{name}</span>
           <Image
             className="rounded=full"
-            src={`/${image}.png`}
+            src={sprites?.front_default}
             alt="profile image"
             width={70}
             height={40}
             priority={key < 5}
           />
-          <p className="min-h-10 md:text-lg lg:text-xl">{description}</p>
-          <span className="min-h-5 md:text-lg lg:text-xl">{rating}</span>
+          <p className="min-h-10 md:text-lg lg:text-xl">{name}</p>
+          {/* <span className="min-h-5 md:text-lg lg:text-xl">{rating}</span> */}
         </div>
       ) : (
-        <PlaceCardSkeleton />
+        <PokemonCardSkeleton />
       )}
     </>
   );

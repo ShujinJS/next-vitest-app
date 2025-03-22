@@ -1,26 +1,37 @@
 "use client";
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-import { placesData } from "@/lib/data/data.places";
+import { getPokemons, IPokemons } from "@/lib/data/data.pokemons";
 import leftBrandLogo from "@lib/assets/ps5_logo.jpg";
 import rightBrandLogo from "@lib/assets/doritos_logo.jpg";
 import Spinner from "@/components/Spinner/component";
 import "./style.scss";
 
-const PlaceCard = dynamic(() => import("../PlaceCard/component"), {
-  ssr: false,
-  loading: () => <Spinner />,
-});
+const PokemonCardWrapper = dynamic(
+  () => import("../PokemonCardWrapper/component"),
+  {
+    ssr: false,
+    loading: () => <Spinner />,
+  }
+);
 const Image = dynamic(() => import("next/image"), {
   ssr: false,
   loading: () => <Spinner />,
 });
 
-export default function PlaceTemplate() {
+export default function PokemonTemplate() {
   const classNamePrefix = "places-template";
-  const data = placesData?.places;
+  const [data, setData] = useState<IPokemons>();
   const [isLoaded, setIsLoaded] = useState(false);
   const [isSpinning, setIsSpinning] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await getPokemons();
+      setData(response);
+    };
+    fetchData();
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -56,9 +67,15 @@ export default function PlaceTemplate() {
         </div>
         <button onClick={() => setIsLoaded(!isLoaded)}>Toggle Skeleton</button>
 
+        {/* <div className={classNamePrefix + "__cards-container"}>
+          {data?.results.map((pokemon) => (
+            <PokemonClosedCard data={pokemon} isLoaded={isLoaded} />
+          ))}
+        </div> */}
+
         <div className={classNamePrefix + "__cards-container"}>
-          {data?.map((feed, index) => (
-            <PlaceCard key={index} data={feed} isLoaded={isLoaded} />
+          {data?.results.map((pokemon) => (
+            <PokemonCardWrapper data={pokemon} isLoaded={isLoaded} />
           ))}
         </div>
 
